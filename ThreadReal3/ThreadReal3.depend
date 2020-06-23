@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1592875614 source:c:\users\fabreu\desktop\projetos\testes\threadreal3\main.cpp
+	"Principal.h"
+
+1592857999 source:c:\users\fabreu\desktop\projetos\testes\threadreal3\thread.cpp
+	"Thread.h"
+
+1592875607 c:\users\fabreu\desktop\projetos\testes\threadreal3\thread.h
+	<pthread.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
+1592940246 source:c:\users\fabreu\desktop\projetos\testes\threadreal3\principal.cpp
+	"Principal.h"
+
+1592939600 c:\users\fabreu\desktop\projetos\testes\threadreal3\principal.h
+	"Corredor.h"
+	<list>
+
+1592876387 c:\users\fabreu\desktop\projetos\testes\threadreal3\corredor.h
+	"Thread.h"
+
+1592939982 source:c:\users\fabreu\desktop\projetos\testes\threadreal3\corredor.cpp
+	"Principal.h"
+
