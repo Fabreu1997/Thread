@@ -28,30 +28,45 @@ void Principal::limpar()
 void Principal::iniciarCorrida()
 {
     system("cls");
-    cout << "Iniciando a Corrida:            " << endl;
-    cout << "................................" << endl;
-    cout << "Participantes:                  " << endl;
-    cout << "................................" << endl;
-
-    for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+    if(_corredores.size() != 0)
     {
-        cout << (*_it)->getNome() << endl;
+        _semaforoAberto = false;
+        cout << "Iniciando a Corrida:            " << endl;
+        cout << "................................" << endl;
+        cout << "Participantes:                  " << endl;
+        cout << "................................" << endl;
+
+        for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+        {
+            cout << (*_it)->getNome() << endl;
+        }
+        cout << endl;
+
+        for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+        {
+            (*_it)->start();
+        }
+
+        for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+        {
+            (*_it)->join();
+        }
+
+        while(!_semaforoAberto)
+        {
+
+        }
+        for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+        {
+            (*_it)->setVoltas(0);
+        }
+
     }
-    cout << endl;
-
-    for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
+    else
     {
-        (*_it)->start();
-    }
-
-    /*for(_it = _corredores.begin(); _it != _corredores.end(); ++_it)
-    {
-        (*_it)->join();
-    }*/
-
-    while(!_semaforoAberto)
-    {
-
+        cout << ".........................................." << endl;
+        cout << "Nenhum Participante Adicionado!!!         " << endl;
+        cout << ".........................................." << endl;
     }
     system("pause");
 }
